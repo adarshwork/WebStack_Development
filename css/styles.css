@@ -252,26 +252,38 @@ div .jobsearch button
 {
     opacity: 0.5;
 }
-
+.joblist
+{
+	margin-top: 10px;
+}
+.joblist li
+{
+	border-top: 1px solid lightgrey;
+	padding: 10px;
+	border-right: none;
+	border-left: none;
+}
 div .anm 
 {
-  width: 125px;
-  height: 100px;
+  width: 150px;
+  height: 80px;
   background-color: red;
   position: relative;
   animation-name: anim;
-  animation-duration: 2s;
+  animation-duration: 5s;
   animation-direction: reverse;
   animation-iteration-count: infinite;
+  font-size: 4em;
+  color: white;
 }
 
 @keyframes anim 
 {
-  0%   {background-color:red; left:0px; left:0px;}
-  25%  {background-color:yellow; left:1275px; left:0px;}
-  50%  {background-color:blue; left:1275px; left:1275px;}
-  75%  {background-color:green; left:0px; left:1275px;}
-  100% {background-color:red; left:0px; left:0px;}
+  0%   {background-color:red; left:30px; left:30px;}
+  25%  {background-color:yellow; left:1330px; left:30px;}
+  50%  {background-color:blue; left:1330px; left:1330px;}
+  75%  {background-color:green; left:30px; left:1330px;}
+  100% {background-color:red; left:30px; left:30px;}
 }
 /* Desktop view options */
 
