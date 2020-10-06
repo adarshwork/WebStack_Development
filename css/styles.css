@@ -231,6 +231,23 @@ div .jobsearch button
 {
     color: aqua;
 }
+.joblist li a div h3:link
+{
+	text-decoration: none;
+	color: white;
+}
+.joblist li a div h3:visited
+{
+    color: lightgreen;
+}
+.joblist li a div h3:hover
+{
+    color: lightgrey;
+}
+.joblist li a div h3:active
+{
+    color: aqua;
+}
 .jobsearch span.part-time
  { 
 	background-color: #f1630d;
