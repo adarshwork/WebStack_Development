@@ -237,6 +237,7 @@ div .jobsearch button
 	font-family: Times New Roman;
 	color: white;
 	font-size: 0.75em;
+	text-decoration: underline overline;
  }
 
 .jobsearch div h3, .jobsearch ul, .jobsearch ul li a:link, .jobsearch ul li a:hover, .jobsearch div span i, .jobsearch div p
