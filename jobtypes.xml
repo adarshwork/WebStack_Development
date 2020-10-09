@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-stylesheet type="text/xsl" href="jobtypes.xsl"?>
+ <jtypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:notitlespaceSchemasalary="jobtypes.xsd"> 
+  <jinfo> 
+   <title> Pizza Executive - Tasty Pizzas </title> 
+   <type> PART-TIME </type> 
+   <location> Bangalore </location> 
+   <salary> ₹3000-6000 pm </salary>
+   <description> The Pizza Executive would be making pizza, delivering pizza (when required), handling the guests and taking the orders of our guests. </description>
+   <vacancy> Yes </vacancy>
+  </jinfo> 
+  <jinfo> 
+   <title> Tutor - ALS Coaching Classes </title>
+   <type> PART-TIME </type> 
+   <location> Bangalore </location> 
+   <salary> ₹10000-15000 pm </salary>
+   <description> The Tutor would be teaching various batches of students, creating question banks and keeping record of students. </description>
+   <vacancy> Yes </vacancy>
+  </jinfo> 
+  <jinfo>  
+   <title> Data Entry Executive - Typing Solution </title> 
+   <type> PART-TIME </type> 
+   <location> Bangalore </location> 
+   <salary> ₹5000-10000 pm </salary>
+   <description> The Data Entry Executive would do the data entry, collect the data from different sources, regularly update the data-sheets and inform about the work updates daily. </description>
+   <vacancy> Yes </vacancy>
+  </jinfo> 
+  <jinfo>  
+   <title> Restaurant Team Member - Brew and Brooks </title> 
+   <type> PART-TIME </type> 
+   <location> Bangalore </location> 
+   <salary> ₹3000-6000 pm </salary>
+   <description> The Restaurant Team Member would serve our guests, deliver the food (when required), handle the guests and take the orders of our guests. </description>
+   <vacancy> Yes </vacancy> 
+  </jinfo> 
+  <jinfo>  
+   <title> Cab Driver - Our Cabs </title> 
+   <type> PART-TIME </type> 
+   <location> Bangalore </location> 
+   <salary> ₹5000-10000 pm </salary>
+   <description> The Cab Driver would drive the cab, handle the passengers professionally, keep record of number of daily rides, give updates about daily revenue. </description>
+   <vacancy> Yes </vacancy>
+  </jinfo> 
+ </jtypes> 
