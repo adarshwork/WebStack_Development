@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Job-Host</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="icon" type="image/ico" href="images/jh_icon.ico">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script type="text/javascript">
+        function validate_form() 
+        {
+            if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(document.jsignup.reg_email.value)) 
+            {
+                alert("Please enter a valid email address")
+                return (false)
+            }
+
+            var letters = /^[A-Za-z ]+$/;
+            if(!(jsignup.name.value.match(letters)))
+            {
+                alert('Please enter a valid name');
+                return false;
+            }
+
+            if(jsignup.password.value != jsignup.password_1.value)
+            {
+                alert('Passwords do not match!');
+                return false;            
+            }
+
+            var fileInput = document.getElementById('reg_resume'); 
+            var filePath = fileInput.value; 
+          
+            // Allowing file type 
+            var allowedExtensions = /(\.pdf|\.doc|\.docx)$/i; 
+              
+            if (!allowedExtensions.exec(filePath)) 
+            { 
+                alert('Please upload either pdf, doc or docx file'); 
+                fileInput.value = ''; 
+                return false; 
+            }
+
+            else
+            {
+                alert("You have been successfully registered! Redirecting to Login Page.");
+            }
+        }
+ 
+        function isPhoneNumberKey(evt)
+         {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31 &&
+                (charCode < 48 || charCode > 57)) 
+            {
+                alert("Please enter a valid Phone Number");
+                return false;
+            }
+            return true;
+        }
+</script>
+</head>
+<body>
+<div>
+<header>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Job-Host" /></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a class="dropdown-toggle" data-toggle="dropdown" href="index.html">HOME</a></li>
+      <li><a href="jobtypes.html">JOB TYPES</a></li>
+      <li><a href="job.html">JOBS</a></li>
+      <li class="dropdown"><a href="#">JOB-SEEKER</a>
+        <ul class="dropdown-menu">
+        <li><a href="jsignup.html">SIGNUP</a></li>
+        <li><a href="jlogin.html">LOGIN</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="#">EMPLOYER</a>
+        <ul class="dropdown-menu">
+        <li><a href="esignup.html">SIGNUP</a></li>
+        <li><a href="elogin.html">LOGIN</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+</header>
+    <div style="background-color: #101010; height: 100px; color: white;">
+      <h2 style="text-align: center;">My Account</h2>
+          <p style="text-align: center;"><a href="index.html" style="color: white; text-decoration: none;">Home </a>> Account </p>
+    </div>
+    <div class="esignup" style=" background: url(images/bg_3.jpg), url(images/bg_2.jpg); background-position: right top, left; background-repeat: no-repeat, no-repeat; background-attachment:fixed, fixed; background-size: auto, cover; margin:0px; height: 830px;">
+          <h3>Job-Seeker Registration</h3>
+          
+          <form method="post" class="register" action="jlogin.html" name="jsignup" onsubmit="return validate_form();" enctype="multipart/form-data">
+            <p>
+              <p><label for="reg_email">Email Address:</label></p>
+              <input type="email" class="input-text" name="email" id="reg_email"  placeholder="name@example.com" required />
+            </p>           
+            <p>
+              <p><label for="reg_password">Password:</label></p>
+              <input type="password" class="input-text" name="password" id="reg_password" placeholder="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+            </p>
+            <p>
+              <p><label for="reg_password2">Repeat Password:</label></p>
+              <input type="password" class="input-text" name="password_1" id="reg_password2" placeholder="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+            </p> 
+            <p>
+              <p><label for="reg_companyname">Name:</label></p>
+              <input type="text" class="input-text" name="name" id="reg_name" minlength="4" placeholder="Full Name" required />
+            </p>
+            <p><label for="reg_gender">Gender</label></p>
+            <input type="radio" name="gender" value="Male" id="reg_gender" required /> Male
+            <input type="radio" name="gender" value="Female" id="reg_gender" required /> Female
+            </p>
+            <p><label for="reg_dob">Date of Birth</label></p>
+            <input class="input-text" type="text" name="dob" id="reg_dob" placeholder="YYYY-MM-DD" max="2001-09-31" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="DOB should be in YYYY-MM-DD format."  required/>
+            </p>
+            <p>
+            <p><label for="reg_contact">Contact No.</label></p>
+            <input class="input-text" type="text" name="contact" id="reg_contact" minlength="10" maxlength="10" onkeypress="return isPhoneNumberKey(event)" placeholder="1234567890" required//>
+            </p> 
+            <p>
+            <p><label for="reg_location">Location</label></p>
+                <select name="reg_location" id="reg_location" style="color: black; height: 30px;">
+                <option>Bangalore</option>
+                <option>Chennai</option>
+                <option>Mumbai</option>
+                <option">Delhi</option>
+                <option>Kolkata</option>
+                <option>Hyderabad</option>
+                </select>
+            </p>  
+            <p><label for="reg_resume">Resume</label></p>
+            <input type="file" name="resume" id="reg_resume" style="cursor: pointer;" required />
+            </p>               
+            <p>
+              <input type="submit" class="button" name="submit" value="REGISTER" />
+            </p> 
+            <p>Already registered? <a href="jlogin.html">Login</a></p>          
+          </form>
+    </div>
+<footer style="background-color: black;">
+     <p style="color: white;"><b>About</b><p>
+       Job-Host helps in finding part-time jobs within a short span of time for the job-seekers out there. It is a platform where part-time jobs can be found within just a few clicks.<br><br>
+     <p style="color: white;"><b>Contact Us</b><p>
+       Job-Host Inc.<br>
+       e-mail: admin@Job-Host.com<br><br>
+     <a href="index.html" style="background-color: #202020; color: white; text-decoration: none;">Get Started</a>
+    <hr>
+     <div class="copyrights">©  Copyright 2020 by <a href="index.html">Job-Host</a>. All Rights Reserved.</div>
+     <div id="backtotop"><a href="#" style="background-color: #202020; color: white; text-decoration: none; float: right;">Get to Top</a></div> 
+  </footer>
+</body>
+</html>
