@@ -231,6 +231,7 @@ div .jobsearch button
 {
     color: aqua;
 }
+
 .jobsearch span.part-time
  { 
 	background-color: #f1630d;
@@ -461,4 +462,39 @@ div .anm
         width: 100%;
     }
 }
+
+/* esignup.html,jsignup.html, elogin.html, jlogin.html  */
+.esignup
+{
+    padding-left: 200px;
+    text-align: justify-all;
+    font-weight:bold;
+    color: white;
+}
+.esignup form input.input-text
+{
+    height: 40px;
+    width: 730px;
+    color: black;
+}
+.esignup p a
+{
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.esignup p a:hover
+{
+    background-color: grey;
+}
+input.button
+{
+    background-color: #202020;
+    color: white;
+    border: none;
+    height: 30px;
+    width: 100px;
+}
+
+
 
