@@ -12,13 +12,14 @@
         {
             if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(document.jlogin.email.value)) 
             {
-                alert("Please enter a valid email address")
-                return (false)
+                alert("Please enter a valid email address");
+                return (false);
             }
 
             else
             {
                 window.alert("You have successfully logged in!");
+                window.location='index.html';
             }
         }
  
