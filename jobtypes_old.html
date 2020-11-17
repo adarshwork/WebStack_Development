@@ -36,49 +36,35 @@
   </div>
 </nav>
 </header>
+<span style="font-size:50px; float: left; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&#8593;</span><span style="float:left; color: white;"><br><br>That's an Image(not a text) link to home page.</span>
 </div>
 <div class="jobtypes" style=" background: url(images/bg_3.jpg), url(images/bg_2.jpg); background-position: right top, left; background-repeat: no-repeat, no-repeat; background-attachment:fixed, fixed; background-size: auto, cover; margin:0px;">
-  <h2 style="text-align: center; color: white;">Types of Jobs</h2>
-  <table class="center" id="jbtp" style="border-collapse: collapse; text-align:justify; width:1200px;">
-    <script>
-        loadXML();
-        function loadXML()
-        {
-            var xhttp=new XMLHttpRequest();
-            xhttp.onreadystatechange=function()
-            {
-                if(this.readyState==4&&this.status==200)
-                {
-                    myFunction(this);
-                }
-            };
-            xhttp.open("GET","jobtypes.xml", true);
-            console.log(xhttp.readyState);
-            xhttp.send();
-        }
-        function myFunction(xml)
-        {
-            var i;
-            var xmlDoc=xml.responseXML;
-            var t="<tr><th>Title</th><th>Type</th><th>Location</th><th>Salary</th><th>Vacancy</th></tr>";
-            var x=xmlDoc.getElementsByTagName("jinfo");
-            for(i=0;i<x.length;i++)
-            {
-                t +="<tr><td>" +
-                x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("type")[0].childNodes[0].nodeValue +
-                "</td><td>"  +
-                x[i].getElementsByTagName("location")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue +
-                "</td><td>" +
-                x[i].getElementsByTagName("vacancy")[0].childNodes[0].nodeValue +
-                "</td></tr>";
-            }
-            document.getElementById("jbtp").innerHTML=t;
-        }
-    </script>
+  <h2 style="text-align: center; color: white;">Types of Jobs <a href="jobtypes.xml" style="float: right; color: white; background-color: black;">Job Types XML</a></h2>
+  <table class="center" style="border-collapse: collapse; text-align:justify; width:1200px;">
+    <tr>
+      <th>Job Title</th>
+      <th>Salary</th>
+    </tr>
+    <tr>
+      <td><a href="#">Pizza Executive - Tasty Pizzas</a></td>
+      <td>₹3000-6000 pm </td>
+    </tr>
+    <tr>
+      <td><a href="#">Tutor - ALS Coaching Classes</a></td>
+      <td>₹10000-15000 pm</td>
+    </tr>
+    <tr>
+      <td><a href="#">Data Entry Executive - Typing Solutions</a></td>
+      <td>₹5000-10000 pm</td>
+    </tr>
+    <tr>
+      <td><a href="#">Restaurant Team Member - Brew & Brooks</a></td>
+      <td>₹3000-6000 pm</td>
+    </tr>
+    <tr>
+      <td><a href="#">Cab Driver - Our Cabs</a></td>
+      <td>₹5000-10000 pm</td>
+    </tr>
   </table>
 </div>
 <footer style="background-color: black;">
