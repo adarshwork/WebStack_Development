@@ -43,6 +43,13 @@ div .findjob button
 	background-color: #202020;
 	text-decoration: none;
 }
+.oljob select
+{
+    margin-left: 30px; 
+    padding: 5px; 
+    background-color: black;
+    color: white;
+}
 .oljob ol li a:hover
 {
 	background-color: #777777;
