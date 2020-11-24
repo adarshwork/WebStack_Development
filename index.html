@@ -77,6 +77,72 @@
                 endstr = document.cookie.length;
             return unescape(document.cookie.substring(offset, endstr));
         }
+        function getJobTitles()
+        {
+          var xmlhttp;
+          if (window.XMLHttpRequest)
+          {
+            xmlhttp = new XMLHttpRequest();
+          } 
+          else 
+          {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange = function()
+          {
+              if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+              {
+                var jsondata = JSON.parse(xmlhttp.responseText); //retrieve result as an JavaScript object
+                var jobs = jsondata.jobs;
+                var output='<form>';
+                output+='<select id="job_select" onchange="jobSelect()" > <option>Select a Job</option>';
+                for (var i=0; i < jobs.length; i++)
+                {
+                  output +='<option value="'+i+'">'+jobs[i].title+'</option>';
+                }
+                output+='</select>';
+                output+='</form>';
+                document.getElementById("job_title").innerHTML=output;
+              }
+          }
+          xmlhttp.open("GET","jobs.json",true);
+          xmlhttp.send();
+        }
+        getJobTitles();
+        function jobSelect()
+        {
+          var selectBox = document.getElementById("job_select");
+          var jobIndex = selectBox.options[selectBox.selectedIndex].value;
+          getJobInfo(jobIndex);
+        }
+        function getJobInfo(i)
+        {
+          var xmlhttp;
+          if (window.XMLHttpRequest)
+          {
+            xmlhttp = new XMLHttpRequest();
+          } 
+          else 
+          {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange = function()
+          {
+              if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+              {
+                var jsondata = JSON.parse(xmlhttp.responseText); //retrieve result as an JavaScript object
+                var jobs = jsondata.jobs;
+                var output='';
+                output+= '<li style="list-style-type: disc;">Type: '+jobs[i].type+'</li>';
+                output+= '<li style="list-style-type: square;">Location: '+jobs[i].location+'</li>';
+                output+= '<li style="list-style-type: circle;">Salary: '+jobs[i].salary+'</li>';
+                output+= '<li style="list-style-type: circle;">Description: '+jobs[i].description+'</li>';
+                document.getElementById("job_info").innerHTML=output;
+              }
+            }
+          xmlhttp.open("GET","jobs.json",true);
+          xmlhttp.send();
+        }
 
 </script>
 </head>
@@ -120,13 +186,8 @@
 <div class="oljob">
   <h2> List of Jobs</h2>
   <hr>
-  <ol>
-   <li style="list-style-type: decimal;"><a href="#">Pizza Executive - Tasty Pizzas</a></li>
-   <li style="list-style-type: lower-roman;"><a href="#">Tutor - ALS Coaching Classes</a></li>
-   <li style="list-style-type: disc;"><a href="#">Data Entry Executive - Typing Solutions</a></li>
-   <li style="list-style-type: square;"><a href="#">Restaurant Team Member - Brew & Brooks</a></li>
-   <li style="list-style-type: circle;"><a href="#">Cab Driver - Our Cabs</a></li>
-  </ol>
+  <h4 id="job_title" style="padding-bottom: 10px;"></h4> 
+  <h4 id="job_info" style="margin-left: 30px;"></h4>
 </div>
 <section style="background-color: black; color: white; ">
   <h2>User Reviews</h2>
