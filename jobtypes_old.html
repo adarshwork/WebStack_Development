@@ -7,23 +7,6 @@
 <link rel="icon" type="image/ico" href="images/jh_icon.ico">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script type="text/javascript">
-        function validate_form() 
-        {
-            if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(document.jlogin.email.value)) 
-            {
-                alert("Please enter a valid email address");
-                return (false);
-            }
-
-            else
-            {
-                window.alert("You have successfully logged in!");
-                window.location.href='index.html';
-            }
-        }
- 
-</script>
 </head>
 <body>
 <div>
@@ -54,30 +37,37 @@
   </div>
 </nav>
 </header>
-    <div style="background-color: #101010; height: 100px; color: white;">
-      <h2 style="text-align: center;">My Account</h2>
-          <p style="text-align: center;"><a href="index.html" style="color: white; text-decoration: none;">Home </a>> Account </p>
-    </div>
-    <div class="esignup" style=" background: url(images/bg_3.jpg), url(images/bg_2.jpg); background-position: right top, left; background-repeat: no-repeat, no-repeat; background-attachment:fixed, fixed; background-size: auto, cover; margin:0px; height: 290px;">
-          <h3>Job-Seeker Login</h3>
-
-          <form method="post" class="login" action="" onsubmit="return validate_form();" name="jlogin">   
-            <p>
-              <p><label for="username">Email Address:</label></p>
-              <input type="email" class="input-text" placeholder="name@example.com" name="email" id="email" required />
-            </p>           
-            <p>
-              <p><label for="password">Password:</label></p>
-              <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="input-text" placeholder="********" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" name="password" id="password" required />
-            </p>                
-            <p>
-              <input type="submit" class="button" name="submit" value="LOGIN" />
-            </p>
-            <p>Not registered yet? <a href="jsignup.html">Sign Up</a></p>
-            
-          </form>      
-  </div>
-
+<span style="font-size:50px; float: left; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&#8593;</span><span style="float:left; color: white;"><br><br>That's an Image(not a text) link to home page.</span>
+</div>
+<div class="jobtypes" style=" background: url(images/bg_3.jpg), url(images/bg_2.jpg); background-position: right top, left; background-repeat: no-repeat, no-repeat; background-attachment:fixed, fixed; background-size: auto, cover; margin:0px;">
+  <h2 style="text-align: center; color: white;">Types of Jobs <a href="jobtypes.xml" style="float: right; color: white; background-color: black;">Job Types XML</a></h2>
+  <table class="center" style="border-collapse: collapse; text-align:justify; width:1200px;">
+    <tr>
+      <th>Job Title</th>
+      <th>Salary</th>
+    </tr>
+    <tr>
+      <td><a href="#">Pizza Executive - Tasty Pizzas</a></td>
+      <td>₹3000-6000 pm </td>
+    </tr>
+    <tr>
+      <td><a href="#">Tutor - ALS Coaching Classes</a></td>
+      <td>₹10000-15000 pm</td>
+    </tr>
+    <tr>
+      <td><a href="#">Data Entry Executive - Typing Solutions</a></td>
+      <td>₹5000-10000 pm</td>
+    </tr>
+    <tr>
+      <td><a href="#">Restaurant Team Member - Brew & Brooks</a></td>
+      <td>₹3000-6000 pm</td>
+    </tr>
+    <tr>
+      <td><a href="#">Cab Driver - Our Cabs</a></td>
+      <td>₹5000-10000 pm</td>
+    </tr>
+  </table>
+</div>
 <footer style="background-color: black;">
      <p style="color: white;"><b>About</b><p>
        Job-Host helps in finding part-time jobs within a short span of time for the job-seekers out there. It is a platform where part-time jobs can be found within just a few clicks.<br><br>
