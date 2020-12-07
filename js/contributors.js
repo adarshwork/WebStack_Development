@@ -4,7 +4,7 @@ angular.module('myapp',[])
     $scope.contributors=[
         {id:'C01',name:'Adarsh', info:"Creator"},
         {id:'C02',name:'Google', info:" Source for Everything"},
-        {id:'C03',name:'W3Schools',info:"Largest Web Development"},
+        {id:'C03',name:'W3Schools',info:"Largest Web Development Website"},
         {id:'C04',name:'StackOverflow', info:"Problem Solver"}
     ];
     $scope.save=function()
