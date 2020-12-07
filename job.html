@@ -48,14 +48,14 @@
 		    </form><br>
 	</div>
         <div class="anm">JOBS</div>
-        <p style="color:white; margin-left: 45px;">Rows to Display: <input type="number" step="1" min="0" max="5" ng-model="rowlimit" style="color:black; width:60px;"/></p>
+        <p style="color:white; margin-left: 45px;">Rows to Display: <input type="number" step="1" min="0" max="5" ng-model="rowlimit" style="color:black; width:60px;" /></p>
         <ul class="joblist">
-        <li ng-repeat="job in jobs | limitTo:rowlimit | filter:Search "><a href="#">
+        <li ng-repeat="job in jobs | limitTo:rowlimit | orderBy: 'title' | filter:Search "><a href="#">
         <img src="{{job.logo}}" alt="{{job.title}}">
         <div>
-         <h3>{{job.title}} <span class="part-time"> {{job.type}}</span></h3>
+         <h3>{{job.title}} <span class="part-time"> {{job.type | lowercase}}</span></h3>
           <div>
-            <span><i class="glyphicon glyphicon-map-marker"></i> {{job.location}}  </span>&nbsp;&nbsp;
+            <span><i class="glyphicon glyphicon-map-marker"></i> {{job.location | uppercase}}  </span>&nbsp;&nbsp;
             <span><i class="glyphicon glyphicon-plus"></i> {{job.salaryll | currency:"&#8377;":0 }}-{{job.salaryul}} pm  </span>
           </div>
                     <p>{{job.description}}</p>
