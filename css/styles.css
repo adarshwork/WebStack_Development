@@ -502,6 +502,19 @@ input.button
     height: 30px;
     width: 100px;
 }
-
+/*investors.php*/
+.invst
+{
+    padding-left: 100px;
+    text-align: justify-all;
+    font-weight:bold;
+    color: white;
+}
+.invst form input.input-text
+{
+    height: 40px;
+    width: 500px;
+    color: black;
+}
 
 
