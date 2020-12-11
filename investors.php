@@ -96,15 +96,15 @@ include "connection.php";
             </p>   
             <p>
               <p><label for="reg_inname">Investor Name:</label></p>
-              <input type="text" class="input-text" name="inname" id="reg_inname" placeholder="Name of the Investor" required />
+              <input type="text" class="input-text" name="inname" id="reg_inname" placeholder="Name of the Investor"/>
             </p>          
             <p>
               <p><label for="reg_ininfo">Investor Info:</label></p>
-              <input type="text" class="input-text" name="ininfo" id="reg_ininfo" placeholder="Investor Information" required />
+              <input type="text" class="input-text" name="ininfo" id="reg_ininfo" placeholder="Investor Information"/>
             </p>   
             <p>
               <p><label for="reg_inamount">Investment Amount:</label></p>
-              <input type="number" class="input-text" name="inamount" id="reg_inamount" min="100" placeholder="Amount of Investment (in ₹)" required />
+              <input type="number" class="input-text" name="inamount" id="reg_inamount" min="100" placeholder="Amount of Investment (in ₹)"/>
             </p>            
             <p>
               <button type="submit" name="insert" class="glyphicon" style="background-color: #202020; height: 45px;"><i class="glyphicon glyphicon-plus"></i>INSERT</button>&nbsp;&nbsp;
