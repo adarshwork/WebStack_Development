@@ -43,6 +43,10 @@ include "connection.php";
 </nav>
 </header>
   <div class="invst" style=" background: url(images/bg_3.jpg), url(images/bg_2.jpg); background-position: right top, left; background-repeat: no-repeat, no-repeat; background-attachment:fixed, fixed; background-size: auto, cover; margin:0px; height: auto; padding-bottom: 5px;">
+        <form action="#" method="get" style="padding-top: 15px;">
+        <input type="text" placeholder="Investor ID or Name or Info or Investment Amount" name="insearch_1" style="width: 400px; padding:15px; color: black;" value=""/>
+          <button type="submit" name="submit_1" style="width: 50px; height: 50px; background-color: #202020; color: white; cursor: pointer; border: none;" class="glyphicon"><i class="glyphicon glyphicon-search"></i></button>
+        </form>
           <h2 style="text-align: center; color: white;">OUR INVESTORS</h3>
           <table class="center" style="border-collapse: collapse; margin-left: 0px; text-align:justify; width:1320px;">
             <tr>
@@ -52,17 +56,36 @@ include "connection.php";
               <th>Investment Amount (in ₹)</th>
             </tr>
             <?php
-            $res=mysqli_query($link,"SELECT * from investor");
-            while($row=mysqli_fetch_array($res))
-            {
-                echo "<tr>";
-                echo "<td>"; echo $row["in_id"];echo "</td>";
-                echo "<td>"; echo $row["in_name"];echo "</td>";
-                echo "<td>"; echo $row["in_info"];echo "</td>";
-                echo "<td>"; echo $row["in_amount"];echo "</td>";
-                echo "</tr>";
-            }            
-
+              if(isset($_GET['submit_1']))
+              {
+                if(isset($_GET['insearch_1']))
+                {
+                  $res=mysqli_query($link,"SELECT * from investor where CAST(in_id as CHAR) LIKE '%".$_GET['insearch_1']."%' or in_name LIKE '%".$_GET['insearch_1']."%' or in_info LIKE '%".$_GET['insearch_1']."%' or CAST(in_amount as CHAR) LIKE '%".$_GET['insearch_1']."%'");
+                  echo "<h3> Search results for: ".$_GET['insearch_1']."</h3>";
+                  while($row=mysqli_fetch_array($res))
+                  {
+                      echo "<tr>";
+                      echo "<td>"; echo $row["in_id"];echo "</td>";
+                      echo "<td>"; echo $row["in_name"];echo "</td>";
+                      echo "<td>"; echo $row["in_info"];echo "</td>";
+                      echo "<td>"; echo $row["in_amount"];echo "</td>";
+                      echo "</tr>";
+                  } 
+                } 
+              }
+              else
+              {
+                $res=mysqli_query($link,"SELECT * from investor");
+                while($row=mysqli_fetch_array($res))
+                {
+                  echo "<tr>";
+                  echo "<td>"; echo $row["in_id"];echo "</td>";
+                  echo "<td>"; echo $row["in_name"];echo "</td>";
+                  echo "<td>"; echo $row["in_info"];echo "</td>";
+                  echo "<td>"; echo $row["in_amount"];echo "</td>";
+                  echo "</tr>";
+                }            
+              }
             ?>
           </table>
           <h2 style="text-align: center; color: white;">INSERT/UPDATE/DELETE INVESTORS</h3>
